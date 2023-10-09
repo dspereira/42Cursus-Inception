@@ -1,15 +1,16 @@
-# Docker Compose Commands
+# Docker Useful Commands
 
-Here are some useful Docker Compose commands for managing your containers. Docker version 24.0.6
+Here are some useful Docker commands for managing your containers. Tested in Docker version 24.0.6
 
-## Start Containers
 
+## Docker Compose
+
+### Start Containers
 ```shell
 docker compose -f docker-compose.yml up
-'''
+```
 
-## Stop and Remove Containers
-
+### Stop and Remove Containers
 ```shell
 docker compose -f docker-compose.yml down
-'''
+```
