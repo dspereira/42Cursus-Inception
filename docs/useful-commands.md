@@ -8,6 +8,10 @@ Here are some useful Docker commands for managing your containers. Tested in Doc
 ```shell
 docker images
 ```
+### remove images
+```shell
+docker images rm id-image
+```
 ### list running containers
 ```shell
 docker ps
