@@ -1,6 +1,6 @@
 version: '3'
 services:
   nginx_cont:
-    image: nginx
+    image: my-app:1.0
     ports:
       - 8080:80
