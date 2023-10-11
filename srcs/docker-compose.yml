@@ -4,3 +4,9 @@ services:
     image: my-app:1.0
     ports:
       - 80:80
+    networks:
+      - inception-network
+networks:
+  inception-network:
+    name: inception
+    driver: bridge

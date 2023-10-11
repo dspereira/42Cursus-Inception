@@ -20,6 +20,15 @@ docker ps
 ```shell
 docker network ls
 ```
+### verify configs and containers connected to network
+```shell
+sudo docker network inspect network-name
+```
+### remove network
+```shell
+sudo docker network rm network-name
+```
+
 ### pull an image from Docker Hub and run a container in detached mode
 ```shell
 docker run -d nginx
@@ -33,6 +42,10 @@ docker exec -it id-container /bin/bash
 ```shell
 docker build -t name-image-and-version:1.0 path-for-dockerfile
 ```
+### inspect ip of container 
+```shell
+docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' id-container
+```
 
 ## Docker Compose
 
@@ -44,4 +57,19 @@ docker compose -f docker-compose.yml up
 ### stop and Remove Containers
 ```shell
 docker compose -f docker-compose.yml down
+```
+
+## Others
+
+### service status
+```shell
+service nginx status
+```
+### start service
+```shell
+service nginx start
+```
+### stop service
+```shell
+service nginx stop
 ```
