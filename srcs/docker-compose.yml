@@ -1,7 +1,8 @@
 version: '3'
 services:
-  nginx_cont:
-    image: my-app:1.0
+  nginx:
+    container_name: nginx
+    image: nginx
     ports:
       - 443:443
     networks:
