@@ -3,7 +3,7 @@ services:
   nginx_cont:
     image: my-app:1.0
     ports:
-      - 80:80
+      - 443:443
     networks:
       - inception-network
 networks:

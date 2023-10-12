@@ -33,6 +33,14 @@ sudo docker network rm network-name
 ```shell
 docker run -d nginx
 ```
+### stop container
+```shell
+docker stop id-container
+```
+### start container
+```shell
+docker start id-container
+```
 ### execute bash inside container
 ```shell
 docker exec -it id-container /bin/bash
