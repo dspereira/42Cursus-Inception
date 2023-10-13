@@ -10,11 +10,15 @@ docker images
 ```
 ### remove images
 ```shell
-docker images rm id-image
+docker image rm id-image
 ```
 ### list running containers
 ```shell
 docker ps
+```
+### create a network type bridge
+```shell
+docker network create network-name
 ```
 ### list the active networks
 ```shell
@@ -22,13 +26,20 @@ docker network ls
 ```
 ### verify configs and containers connected to network
 ```shell
-sudo docker network inspect network-name
+docker network inspect network-name
 ```
 ### remove network
 ```shell
-sudo docker network rm network-name
+docker network rm network-name
 ```
-
+### create volume
+```shell
+docker volume create volume-name
+```
+### list all existing volumes
+```shell
+docker volume ls
+```
 ### pull an image from Docker Hub and run a container in detached mode
 ```shell
 docker run -d nginx
@@ -36,6 +47,10 @@ docker run -d nginx
 ### stop container
 ```shell
 docker stop id-container
+```
+### remove container
+```shell
+docker rm id-container
 ```
 ### start container
 ```shell
