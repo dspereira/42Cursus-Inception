@@ -7,6 +7,36 @@ services:
       - 443:443
     networks:
       - inception-network
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    networks:
+      - inception-network
+    restart: always
+    environment:
+      - MARIADB_USER=dsilveri
+      - MARIADB_PASSWORD=user123
+      - MARIADB_ROOT_PASSWORD=root123
+    volumes:
+      - db-data:/var/lib/mysql/
+  php-admin:
+    depends_on:
+      - mariadb
+    container_name: phpmyadmin
+    image: phpmyadmin
+    ports:
+      - 8080:80
+    networks:
+      - inception-network
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_PORT=3306
+      #- PMA_USER=root
+      #- PMA_PASSWORD=user123
+      #- PMA_ROOT_PASSWORD=root123
+volumes:
+  db-data:
+    driver: local
 networks:
   inception-network:
     name: inception
