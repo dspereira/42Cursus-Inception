@@ -12,11 +12,11 @@ services:
     image: mariadb
     networks:
       - inception-network
-    restart: always
-    environment:
-      - MARIADB_USER=dsilveri
-      - MARIADB_PASSWORD=user123
-      - MARIADB_ROOT_PASSWORD=root123
+    #restart: always
+    #environment:
+    #  - MARIADB_USER=dsilveri
+    #  - MARIADB_PASSWORD=user123
+    #  - MARIADB_ROOT_PASSWORD=root123
     volumes:
       - db-data:/var/lib/mysql/
   php-admin:
