@@ -7,18 +7,25 @@ services:
       - 443:443
     networks:
       - inception-network
+    volumes:
+      - wordpress-data:/var/www/html/
+  
   mariadb:
     container_name: mariadb
     image: mariadb
     networks:
       - inception-network
-    #restart: always
-    #environment:
-    #  - MARIADB_USER=dsilveri
-    #  - MARIADB_PASSWORD=user123
-    #  - MARIADB_ROOT_PASSWORD=root123
     volumes:
       - db-data:/var/lib/mysql/
+  
+  wordpress:
+    container_name: wordpress
+    image: wordpress
+    networks:
+      - inception-network
+    volumes:
+      - wordpress-data:/var/www/html/
+
   php-admin:
     depends_on:
       - mariadb
@@ -34,9 +41,15 @@ services:
       #- PMA_USER=root
       #- PMA_PASSWORD=user123
       #- PMA_ROOT_PASSWORD=root123
+
 volumes:
   db-data:
+    name: db-data
     driver: local
+  wordpress-data:
+    name: wordpress-data
+    driver: local
+  
 networks:
   inception-network:
     name: inception
