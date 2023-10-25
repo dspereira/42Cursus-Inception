@@ -1,6 +1,8 @@
 version: '3'
 services:
   nginx:
+    depends_on:
+      - wordpress
     container_name: nginx
     image: nginx
     ports:
@@ -19,6 +21,8 @@ services:
       - db-data:/var/lib/mysql/
   
   wordpress:
+    depends_on:
+      - mariadb
     container_name: wordpress
     image: wordpress
     networks:
