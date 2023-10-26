@@ -11,7 +11,8 @@ RUN apt update && apt install -y \
     php-xmlrpc      \
     php-soap        \
     php-intl        \
-    php-zip
+    php-zip         \
+    mariadb-client
 
 # Install WordPress CLI (WP-CLI) for command-line WordPress management.
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
@@ -20,8 +21,8 @@ RUN mv wp-cli.phar /usr/local/bin/wp
 
 # Create the /var/www/html/ directory and download WordPress inside it, 
 # ensuring accessibility for NGINX.
-RUN mkdir -p /var/www/html
-RUN cd /var/www/html && wp --allow-root core download
+#RUN mkdir -p /var/www/html
+#RUN cd /var/www/html && wp --allow-root core download
 
 # This directory is required for creating the php7.4-fpm.pid file
 RUN mkdir /run/php/ && chmod 755 /run/php/
