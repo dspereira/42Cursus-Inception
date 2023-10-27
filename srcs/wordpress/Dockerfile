@@ -31,6 +31,6 @@ RUN chmod +x /home/wp_install_config.sh
 
 EXPOSE 9000
 
-ENTRYPOINT ["/bin/bash", "/home/wp_install_config.sh"]
+ENTRYPOINT ["/home/wp_install_config.sh"]
 
 CMD ["php-fpm7.4", "-F", "-R"]

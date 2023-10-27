@@ -1,10 +1,10 @@
-version: '3'
+version: '3.8'
 services:
   nginx:
+    build: ./nginx
     depends_on:
       - wordpress
     container_name: nginx
-    image: nginx
     ports:
       - 443:443
     networks:
@@ -13,36 +13,22 @@ services:
       - wordpress-data:/var/www/html/
   
   mariadb:
+    build: ./mariadb
     container_name: mariadb
-    image: mariadb
     networks:
       - inception-network
     volumes:
       - db-data:/var/lib/mysql/
   
   wordpress:
+    build: ./wordpress
     depends_on:
       - mariadb
     container_name: wordpress
-    image: wordpress
     networks:
       - inception-network
     volumes:
       - wordpress-data:/var/www/html/
-
-  #php-admin:
-  #  depends_on:
-  #    - mariadb
-  #  container_name: phpmyadmin
-  #  image: phpmyadmin
-  #  ports:
-  #    - 8080:80
-  #  networks:
-  #    - inception-network
-  #  environment:
-  #    - PMA_HOST=mariadb
-  #    - PMA_PORT=3306
-
 
 volumes:
   db-data:

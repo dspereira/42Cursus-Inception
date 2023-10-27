@@ -75,16 +75,16 @@ if [ ! -e "$conf_file" ]; then
         # It appears that using 'depends_on' doesn't guarantee that WordPress will start after MariaDB.
         sleep 1
 
-    done 
+    done
     
     if [ $attempts -ge $max_attempts ]; then
-        echo "Failed to install WordPress"
+        echo "Failed to install WordPress."
     else
-        echo "WordPress installation successful"
+        echo "WordPress installation successfully."
     fi
   
 else
-    echo "Wordpress already installed and ready to use"
+    echo "Wordpress already installed and ready to use."
 fi
 
 exec "$@"

@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 if [ ! -d "/var/lib/mysql/my_db" ]; then

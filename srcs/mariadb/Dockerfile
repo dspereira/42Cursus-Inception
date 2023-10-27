@@ -11,6 +11,6 @@ RUN mysql_install_db
 
 EXPOSE 3306
 
-ENTRYPOINT ["/bin/bash", "/home/mariadb_configs.sh"]
+ENTRYPOINT ["/home/mariadb_configs.sh"]
 
 CMD ["mysqld", "--bind-address=0.0.0.0"]
