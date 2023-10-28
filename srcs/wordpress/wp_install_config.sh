@@ -17,10 +17,10 @@ wp_config()
     if wp config create \
         --allow-root \
         --path=/var/www/html/ \
-        --dbname=my_db \
-        --dbuser=dsilveri \
-        --dbpass=123 \
-        --dbhost=mariadb;
+        --dbname=$DB_NAME \
+        --dbuser=$DB_ADMIN \
+        --dbpass=$DB_PASS \
+        --dbhost=$DB_HOST
     then
         return 1
     else
@@ -33,10 +33,10 @@ wp_install()
     if wp core install    \
         --allow-root \
         --title="Inception" \
-        --admin_user=dsilveri \
-        --admin_password=123 \
-        --admin_email=test@test.com \
-        --url=dsilveri.42.fr
+        --admin_user=$WP_ADMIN \
+        --admin_password=$WP_PASS \
+        --admin_email=$WP_ADMIM_EMAIL \
+        --url=$WP_URL
     then
         return 1
     else

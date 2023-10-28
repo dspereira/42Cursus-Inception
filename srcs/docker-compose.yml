@@ -19,6 +19,8 @@ services:
       - inception-network
     volumes:
       - db-data:/var/lib/mysql/
+    env_file:
+      - .env
   
   wordpress:
     build: ./wordpress
@@ -29,6 +31,8 @@ services:
       - inception-network
     volumes:
       - wordpress-data:/var/www/html/
+    env_file:
+      - .env
 
 volumes:
   db-data:

@@ -6,9 +6,9 @@ if [ ! -d "/var/lib/mysql/my_db" ]; then
 
     sleep 1
 
-    mysql -u root -e "CREATE DATABASE my_db;"
-    mysql -u root -e "CREATE USER 'dsilveri'@'%' IDENTIFIED BY '123';"
-    mysql -u root -e "GRANT ALL PRIVILEGES ON *. * TO 'dsilveri'@'%';"
+    mysql -u root -e "CREATE DATABASE $DB_NAME;"
+    mysql -u root -e "CREATE USER '$DB_ADMIN'@'%' IDENTIFIED BY '$DB_PASS';"
+    mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO '$DB_ADMIN'@'%';"
     mysql -u root -e "FLUSH PRIVILEGES;"
 
     /etc/init.d/mariadb stop
