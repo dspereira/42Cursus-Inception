@@ -1,4 +1,14 @@
+HOST_USER	=  dsilveri
+
 all:
+	@cd /home/$(HOST_USER)/data/ && \
+	if [ ! -d mysql ]; then \
+		mkdir mysql; \
+	fi; \
+	if [ ! -d wordpress ]; then \
+		mkdir wordpress; \
+	fi;
+
 	docker compose -f srcs/docker-compose.yml up -d
 
 start:
@@ -11,8 +21,21 @@ stop:
 clean:
 	docker compose -f srcs/docker-compose.yml down --rmi all --volumes
 
-.SILENT:
-clean-data:
+clean-all-data:
 	docker compose -f srcs/docker-compose.yml down --rmi all --volumes
-	cd /home/dsilveri/data/ && rm -rf mysql wordpress && mkdir mysql  wordpress
-	echo "\e[91mAll data stored in host volumes was be clean\e[0m"
+	cd /home/$(HOST_USER)/data/ && rm -rf mysql wordpress
+
+.SILENT:
+
+show-logs:
+	docker compose -f srcs/docker-compose.yml logs
+
+show-info:
+	echo "-------------------------------------------------------------------------------------------------"
+	docker ps
+	echo "-------------------------------------------------------------------------------------------------"
+	docker images
+	echo "-------------------------------------------------------------------------------------------------"
+	docker network ls
+	echo "-------------------------------------------------------------------------------------------------"
+	docker volume ls
