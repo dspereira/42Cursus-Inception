@@ -10,7 +10,7 @@ services:
     networks:
       - inception-network
     volumes:
-      - wordpress-data:/var/www/html/
+      - wp-data:/var/www/html/
   
   mariadb:
     build: ./mariadb
@@ -30,18 +30,25 @@ services:
     networks:
       - inception-network
     volumes:
-      - wordpress-data:/var/www/html/
+      - wp-data:/var/www/html/
     env_file:
       - .env
 
 volumes:
   db-data:
     name: db-data
-    driver: local
-  wordpress-data:
-    name: wordpress-data
-    driver: local
-  
+    driver_opts:
+      type: none
+      device: /home/dsilveri/data/mysql
+      o: bind
+      
+  wp-data:
+    name: wp-data
+    driver_opts:
+      type: none
+      device: /home/dsilveri/data/wordpress
+      o: bind
+
 networks:
   inception-network:
     name: inception

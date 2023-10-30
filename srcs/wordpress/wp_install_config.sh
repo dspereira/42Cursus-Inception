@@ -32,7 +32,7 @@ wp_install()
 {
     if wp core install    \
         --allow-root \
-        --title="Inception" \
+        --title=$WP_TITLE \
         --admin_user=$WP_ADMIN \
         --admin_password=$WP_PASS \
         --admin_email=$WP_ADMIM_EMAIL \
