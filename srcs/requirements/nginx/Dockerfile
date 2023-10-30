@@ -12,7 +12,7 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
        -keyout /etc/nginx/ssl/dsilveri.key \
        -subj "/C=PT/ST=Lisboa/L=Lisboa/O=42Lisboa/OU=dsilveri/CN=dsilveri/"
 
-COPY nginx_config.conf /etc/nginx/conf.d
+COPY ./conf/nginx_config.conf /etc/nginx/conf.d
 
 EXPOSE 443
 

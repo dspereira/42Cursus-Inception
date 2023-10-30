@@ -26,7 +26,7 @@ RUN mkdir /run/php/ && chmod 755 /run/php/
 # Update the 'listen' configuration in www.conf to use a network socket (0.0.0.0:9000)
 RUN sed -i 's+listen = /run/php/php7.4-fpm.sock+listen = 9000+g' /etc/php/7.4/fpm/pool.d/www.conf
 
-COPY wp_install_config.sh /home
+COPY ./tools/wp_install_config.sh /home
 RUN chmod +x /home/wp_install_config.sh
 
 EXPOSE 9000

@@ -3,7 +3,7 @@ FROM debian:11
 RUN apt update \
    && apt install -y mariadb-server
 
-COPY mariadb_configs.sh /home
+COPY ./tools/mariadb_configs.sh /home
 
 RUN chmod +x /home/mariadb_configs.sh
 

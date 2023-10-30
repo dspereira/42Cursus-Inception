@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   nginx:
-    build: ./nginx
+    build: ./requirements/nginx
     depends_on:
       - wordpress
     container_name: nginx
@@ -13,7 +13,7 @@ services:
       - wp-data:/var/www/html/
   
   mariadb:
-    build: ./mariadb
+    build: ./requirements/mariadb
     container_name: mariadb
     networks:
       - inception-network
@@ -23,7 +23,7 @@ services:
       - .env
   
   wordpress:
-    build: ./wordpress
+    build: ./requirements/wordpress
     depends_on:
       - mariadb
     container_name: wordpress
