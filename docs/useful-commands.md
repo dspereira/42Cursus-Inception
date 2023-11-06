@@ -85,6 +85,10 @@ docker compose -f docker-compose.yml up
 ```shell
 docker compose -f docker-compose.yml down
 ```
+### list containers running
+```shell
+docker compose ps
+```
 
 ## Others
 

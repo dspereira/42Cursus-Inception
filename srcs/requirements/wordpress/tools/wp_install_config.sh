@@ -34,10 +34,14 @@ wp_install()
         --allow-root \
         --title=$WP_TITLE \
         --admin_user=$WP_ADMIN \
-        --admin_password=$WP_PASS \
+        --admin_password=$WP_ADMIM_PASS \
         --admin_email=$WP_ADMIM_EMAIL \
-        --url=$WP_URL
+        --url=$WP_URL 
     then
+        wp user create \
+        --allow-root \
+        $WP_USER $WP_USER_EMAIL \
+        --user_pass=$WP_USER_PASS
         return 1
     else
         return 0
