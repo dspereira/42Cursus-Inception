@@ -1,10 +1,11 @@
 version: '3.8'
 services:
-  nginx:
+  nginx-server:
     build: ./requirements/nginx
+    image: nginx-server
     depends_on:
-      - wordpress
-    container_name: nginx
+      - wordpress-app
+    container_name: nginx-server
     ports:
       - 443:443
     networks:
@@ -12,9 +13,10 @@ services:
     volumes:
       - wp-data:/var/www/html/
   
-  mariadb:
+  mariadb-database:
     build: ./requirements/mariadb
-    container_name: mariadb
+    image: mariadb-database
+    container_name: mariadb-database
     networks:
       - inception-network
     volumes:
@@ -22,11 +24,12 @@ services:
     env_file:
       - .env
   
-  wordpress:
+  wordpress-app:
     build: ./requirements/wordpress
+    image: wordpress-app
     depends_on:
-      - mariadb
-    container_name: wordpress
+      - mariadb-database
+    container_name: wordpress-app
     networks:
       - inception-network
     volumes:

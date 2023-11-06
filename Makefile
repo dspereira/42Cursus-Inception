@@ -1,5 +1,7 @@
 HOST_USER	=  dsilveri
 
+.SILENT:
+
 all:
 	@cd /home/$(HOST_USER)/data/ && \
 	if [ ! -d mysql ]; then \
@@ -17,25 +19,27 @@ start:
 stop:
 	docker compose -f srcs/docker-compose.yml stop
 
-# Remove containers, imagens, e volumes, network
-clean:
+down:
 	docker compose -f srcs/docker-compose.yml down --rmi all --volumes
 
-clean-all-data:
-	docker compose -f srcs/docker-compose.yml down --rmi all --volumes
+clean: down
+
+clean-all-data: clean
 	cd /home/$(HOST_USER)/data/ && rm -rf mysql wordpress
 
-.SILENT:
+re: clean-all-data all
+
 
 show-logs:
 	docker compose -f srcs/docker-compose.yml logs
 
 show-info:
 	echo "-------------------------------------------------------------------------------------------------"
-	docker ps
+	docker ps -a
 	echo "-------------------------------------------------------------------------------------------------"
 	docker images
 	echo "-------------------------------------------------------------------------------------------------"
 	docker network ls
 	echo "-------------------------------------------------------------------------------------------------"
 	docker volume ls
+	echo "-------------------------------------------------------------------------------------------------"

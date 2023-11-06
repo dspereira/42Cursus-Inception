@@ -14,7 +14,11 @@ docker image rm id-image
 ```
 ### list running containers
 ```shell
-docker ps
+docker ps -a
+```
+### remove stoped containers
+```shell
+docker rm
 ```
 ### create a network type bridge
 ```shell
