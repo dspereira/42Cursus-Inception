@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ ! -d "/var/lib/mysql/my_db" ]; then
+if [ ! -d "/var/lib/mysql/$DB_NAME" ]; then
 
     /etc/init.d/mariadb start
 
