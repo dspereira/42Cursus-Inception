@@ -3,7 +3,13 @@ HOST_USER	=  dsilveri
 .SILENT:
 
 all:
-	@cd /home/$(HOST_USER)/data/ && \
+	@cd /home/$(HOST_USER)/ && \
+	if [ ! -d data/ ]; then \
+		mkdir data; \
+	fi;
+
+
+	@cd /home/$(HOST_USER)/data && \
 	if [ ! -d mysql ]; then \
 		mkdir mysql; \
 	fi; \
