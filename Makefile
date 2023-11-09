@@ -33,7 +33,7 @@ clean: down
 clean-all-data: clean
 	cd /home/$(HOST_USER)/data/ && rm -rf mysql wordpress
 
-re: clean-all-data all
+re: clean all
 
 
 show-logs:

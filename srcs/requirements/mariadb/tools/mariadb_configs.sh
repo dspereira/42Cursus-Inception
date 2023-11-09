@@ -4,7 +4,7 @@ if [ ! -d "/var/lib/mysql/$DB_NAME" ]; then
 
     /etc/init.d/mariadb start
 
-    sleep 1
+    sleep 2
 
     mysql -u root -e "CREATE DATABASE $DB_NAME;"
     mysql -u root -e "CREATE USER '$DB_ADMIN'@'%' IDENTIFIED BY '$DB_PASS';"
@@ -14,8 +14,13 @@ if [ ! -d "/var/lib/mysql/$DB_NAME" ]; then
     /etc/init.d/mariadb stop
 
 else
+    /etc/init.d/mariadb start
+    sleep 2
+    /etc/init.d/mariadb stop
     echo "Database is already configured"
-
 fi
 
+echo "Database is ready to use."
+
 exec "$@"
+
