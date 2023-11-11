@@ -14,6 +14,4 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
 
 COPY ./conf/nginx_config.conf /etc/nginx/conf.d
 
-EXPOSE 443
-
 CMD ["nginx", "-g", "daemon off;"]

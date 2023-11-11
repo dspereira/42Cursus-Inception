@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sleep 3
+
 conf_file="/var/www/html/wp-config.php"
 
 wp_download()

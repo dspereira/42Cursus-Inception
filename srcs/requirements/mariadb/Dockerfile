@@ -1,7 +1,7 @@
-FROM debian:11
+FROM debian:buster
 
 RUN apt update \
-   && apt install -y mariadb-server
+   && apt install -y mariadb-server systemd
 
 COPY ./tools/mariadb_configs.sh /home
 
