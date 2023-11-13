@@ -26,7 +26,7 @@ END
     mysql -u root -p$DB_ROOT_PASS -e "FLUSH PRIVILEGES;"
 
 else
-    sleep 1s
+    sleep 1
     echo "Database is already configured"
 fi
 
@@ -35,4 +35,3 @@ mysqladmin -u root -p$DB_ROOT_PASS shutdown
 echo "Database is ready to use."
 
 exec "$@"
-
