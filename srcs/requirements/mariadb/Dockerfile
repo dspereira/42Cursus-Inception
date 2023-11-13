@@ -1,4 +1,4 @@
-FROM debian:buster
+FROM debian:11
 
 RUN apt update \
    && apt install -y mariadb-server systemd

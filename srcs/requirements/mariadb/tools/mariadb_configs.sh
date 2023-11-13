@@ -1,6 +1,6 @@
 #!/bin/bash
 
-service mysql start
+service mariadb start
 sleep 1
 
 if [ ! -d "/var/lib/mysql/$DB_NAME" ]; then
@@ -26,7 +26,7 @@ END
     mysql -u root -pteste42pass -e "FLUSH PRIVILEGES;"
 
 else
-    sleep 1
+    sleep 1s
     echo "Database is already configured"
 fi
 
