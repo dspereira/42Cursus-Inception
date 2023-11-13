@@ -1,4 +1,13 @@
-HOST_USER	=  dsilveri
+HOST_USER	= dsilveri
+
+# Containers Names 
+MARIADB		= mariadb-database
+NGINX		= nginx-server
+WORDPRESS	= wordpress-app
+
+# Docker Compose 
+COMPOSE		= sudo docker compose -f srcs/docker-compose.yml
+DOCKER		= sudo docker
 
 .SILENT:
 
@@ -17,35 +26,41 @@ all:
 		mkdir wordpress; \
 	fi;
 
-	docker compose -f srcs/docker-compose.yml up -d
+	$(COMPOSE) up -d
 
 start:
-	docker compose -f srcs/docker-compose.yml up -d
+	$(COMPOSE) up -d
 
 stop:
-	docker compose -f srcs/docker-compose.yml stop
+	$(COMPOSE) stop
 
-down:
-	docker compose -f srcs/docker-compose.yml down --rmi all --volumes
+clean:
+	$(COMPOSE) down --rmi all --volumes
 
-clean: down
-
-clean-all-data: clean
-	cd /home/$(HOST_USER)/data/ && rm -rf mysql wordpress
+clean-data: clean
+	cd /home/$(HOST_USER)/data/ && sudo rm -rf mysql wordpress
 
 re: clean all
 
+logs:
+	$(COMPOSE) logs
 
-show-logs:
-	docker compose -f srcs/docker-compose.yml logs
+info:
+	echo "-------------------------------------------------------------------------------------------------"
+	$(COMPOSE) ps -a
+	echo "-------------------------------------------------------------------------------------------------"
+	$(DOCKER) images
+	echo "-------------------------------------------------------------------------------------------------"
+	$(DOCKER) network ls
+	echo "-------------------------------------------------------------------------------------------------"
+	$(DOCKER) volume ls
+	echo "-------------------------------------------------------------------------------------------------"
 
-show-info:
-	echo "-------------------------------------------------------------------------------------------------"
-	cd srcs && sudo docker compose ps -a
-	echo "-------------------------------------------------------------------------------------------------"
-	docker images
-	echo "-------------------------------------------------------------------------------------------------"
-	docker network ls
-	echo "-------------------------------------------------------------------------------------------------"
-	docker volume ls
-	echo "-------------------------------------------------------------------------------------------------"
+mariadb-it:
+	$(DOCKER) exec -it $(MARIADB) /bin/bash
+
+nginx-it:
+	$(DOCKER) exec -it $(NGINX) /bin/bash
+
+wordpress-it:
+	$(DOCKER) exec -it $(WORDPRESS) /bin/bash
