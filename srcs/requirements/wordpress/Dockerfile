@@ -1,17 +1,18 @@
 FROM debian:11
 
 RUN apt update && apt install -y \
-    curl            \
-    php-fpm         \
-    php-mysql       \
-    php-curl        \
-    php-gd          \
-    php-mbstring    \
-    php-xml         \
-    php-xmlrpc      \
-    php-soap        \
-    php-intl        \
-    php-zip         \
+    curl               \
+    php7.4             \
+    php7.4-fpm         \
+    php7.4-mysql       \
+    php7.4-curl        \
+    php7.4-gd          \
+    php7.4-mbstring    \
+    php7.4-xml         \
+    php7.4-xmlrpc      \
+    php7.4-soap        \
+    php7.4-intl        \
+    php7.4-zip         \
     mariadb-client
 
 # Install WordPress CLI (WP-CLI) for command-line WordPress management.
