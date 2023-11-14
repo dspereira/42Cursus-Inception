@@ -1,7 +1,7 @@
 FROM debian:11
 
 RUN apt update \
-   && apt install -y mariadb-server systemd
+   && apt install -y mariadb-server
 
 COPY ./tools/mariadb_configs.sh /home
 
@@ -13,4 +13,4 @@ EXPOSE 3306
 
 ENTRYPOINT ["/home/mariadb_configs.sh"]
 
-CMD ["mysqld", "--bind-address=0.0.0.0"]
+CMD ["mysqld_safe", "--bind-address=0.0.0.0"]

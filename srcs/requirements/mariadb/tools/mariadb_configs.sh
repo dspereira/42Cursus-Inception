@@ -1,9 +1,10 @@
 #!/bin/bash
 
-service mariadb start
-sleep 1
-
 if [ ! -d "/var/lib/mysql/$DB_NAME" ]; then
+
+service mariadb start
+
+sleep 1
 
 mysql_secure_installation << END
 
@@ -24,13 +25,12 @@ END
 
     mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$DB_ROOT_PASS';"
     mysql -u root -p$DB_ROOT_PASS -e "FLUSH PRIVILEGES;"
+    mysqladmin -u root -p$DB_ROOT_PASS shutdown
 
 else
     sleep 1
     echo "Database is already configured"
 fi
-
-mysqladmin -u root -p$DB_ROOT_PASS shutdown
 
 echo "Database is ready to use."
 

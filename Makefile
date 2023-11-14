@@ -20,10 +20,10 @@ all:
 
 	@cd /home/$(HOST_USER)/data && \
 	if [ ! -d mysql ]; then \
-		mkdir mysql; \
+		sudo mkdir mysql; \
 	fi; \
 	if [ ! -d wordpress ]; then \
-		mkdir wordpress; \
+		sudo mkdir wordpress; \
 	fi;
 
 	$(COMPOSE) up -d

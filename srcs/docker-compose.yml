@@ -12,7 +12,7 @@ services:
       - inception-network
     volumes:
       - wp-data:/var/www/html/
-    restart: always
+    restart: on-failure
   
   mariadb-database:
     build: ./requirements/mariadb
@@ -24,7 +24,7 @@ services:
       - db-data:/var/lib/mysql/
     env_file:
       - .env
-    restart: always
+    restart: on-failure
   
   wordpress-app:
     build: ./requirements/wordpress
@@ -38,7 +38,7 @@ services:
       - wp-data:/var/www/html/
     env_file:
       - .env
-    restart: always
+    restart: on-failure
 
 volumes:
   db-data:
@@ -58,4 +58,3 @@ volumes:
 networks:
   inception-network:
     name: inception
-    driver: bridge
