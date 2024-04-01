@@ -20,7 +20,7 @@ wp_config()
         --allow-root \
         --path=/var/www/html/ \
         --dbname=$DB_NAME \
-        --dbuser=$DB_ADMIN \
+        --dbuser=$DB_ADMIN_USER \
         --dbpass=$DB_ADMIN_PASS \
         --dbhost=$DB_HOST
     then

@@ -19,8 +19,8 @@ END
 
     sleep 1
     mysql -u root -e "CREATE DATABASE $DB_NAME;"
-    mysql -u root -e "CREATE USER '$DB_ADMIN'@'%' IDENTIFIED BY '$DB_ADMIN_PASS';"
-    mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO '$DB_ADMIN'@'%';"
+    mysql -u root -e "CREATE USER '$DB_ADMIN_USER'@'%' IDENTIFIED BY '$DB_ADMIN_PASS';"
+    mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO '$DB_ADMIN_USER'@'%';"
     mysql -u root -e "FLUSH PRIVILEGES;"
 
     mysql -u root -e "ALTER USER 'root'@'localhost' IDENTIFIED BY '$DB_ROOT_PASS';"
