@@ -21,7 +21,7 @@ wp_config()
         --path=/var/www/html/ \
         --dbname=$DB_NAME \
         --dbuser=$DB_ADMIN \
-        --dbpass=$DB_PASS \
+        --dbpass=$DB_ADMIN_PASS \
         --dbhost=$DB_HOST
     then
         return 1
@@ -35,7 +35,7 @@ wp_install()
     if wp core install    \
         --allow-root \
         --title=$WP_TITLE \
-        --admin_user=$WP_ADMIN \
+        --admin_user=$WP_ADMIN_USER \
         --admin_password=$WP_ADMIM_PASS \
         --admin_email=$WP_ADMIM_EMAIL \
         --url=$WP_URL 
