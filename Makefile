@@ -1,24 +1,22 @@
-HOST_USER	= dsilveri
-
-# Containers Names 
+# Containers Names
 MARIADB		= mariadb-database
 NGINX		= nginx-server
 WORDPRESS	= wordpress-app
 
-# Docker Compose 
+# Docker Compose
 COMPOSE		= sudo docker compose -f srcs/docker-compose.yml
 DOCKER		= sudo docker
 
 .SILENT:
 
 all:
-	@cd /home/$(HOST_USER)/ && \
+	@cd ~/ && \
 	if [ ! -d data/ ]; then \
 		mkdir data; \
 	fi;
 
 
-	@cd /home/$(HOST_USER)/data && \
+	@cd ~/data && \
 	if [ ! -d mysql ]; then \
 		sudo mkdir mysql; \
 	fi; \
@@ -38,7 +36,7 @@ clean:
 	$(COMPOSE) down --rmi all --volumes
 
 clean-data: clean
-	cd /home/$(HOST_USER)/data/ && sudo rm -rf mysql wordpress
+	cd ~/data/ && sudo rm -rf mysql wordpress
 
 re: clean all
 

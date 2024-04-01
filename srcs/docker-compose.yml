@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   nginx-server:
     build: ./requirements/nginx
@@ -45,14 +44,14 @@ volumes:
     name: db-data
     driver_opts:
       type: none
-      device: /home/dsilveri/data/mysql
+      device: /home/debian/data/mysql
       o: bind
       
   wp-data:
     name: wp-data
     driver_opts:
       type: none
-      device: /home/dsilveri/data/wordpress
+      device: /home/debian/data/wordpress
       o: bind
 
 networks:
