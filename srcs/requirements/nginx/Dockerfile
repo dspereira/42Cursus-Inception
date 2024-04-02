@@ -8,9 +8,9 @@ RUN apt-get update\
 RUN mkdir -p /run/nginx
 
 RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
-       -out /etc/nginx/ssl/dsilveri.crt \
-       -keyout /etc/nginx/ssl/dsilveri.key \
-       -subj "/C=PT/ST=Lisboa/L=Lisboa/O=42Lisboa/OU=dsilveri/CN=dsilveri/"
+       -out /etc/nginx/ssl/inception.crt \
+       -keyout /etc/nginx/ssl/inception.key \
+       -subj "/O=inception/OU=inception/CN=inception/"
 
 COPY ./conf/nginx_config.conf /etc/nginx/conf.d
 

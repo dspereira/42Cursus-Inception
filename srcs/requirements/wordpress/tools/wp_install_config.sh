@@ -38,7 +38,7 @@ wp_install()
         --admin_user=$WP_ADMIN_USER \
         --admin_password=$WP_ADMIM_PASS \
         --admin_email=$WP_ADMIM_EMAIL \
-        --url=$WP_URL 
+        --url=$DOMAIN
     then
         wp user create \
         --allow-root \
