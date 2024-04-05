@@ -7,23 +7,12 @@ WORDPRESS	= wordpress-app
 COMPOSE		= sudo docker compose -f srcs/docker-compose.yml
 DOCKER		= sudo docker
 
+include srcs/.env
+
 .SILENT:
 
 all:
-	@cd ~/ && \
-	if [ ! -d data/ ]; then \
-		mkdir data; \
-	fi;
-
-
-	@cd ~/data && \
-	if [ ! -d mysql ]; then \
-		sudo mkdir mysql; \
-	fi; \
-	if [ ! -d wordpress ]; then \
-		sudo mkdir wordpress; \
-	fi;
-
+	sudo mkdir -p $(VOLUMES_PATH)/data/mysql $(VOLUMES_PATH)/data/wordpress
 	$(COMPOSE) up -d
 
 start:
@@ -36,7 +25,7 @@ clean:
 	$(COMPOSE) down --rmi all --volumes
 
 clean-data: clean
-	cd ~/data/ && sudo rm -rf mysql wordpress
+	sudo rm -rf $(VOLUMES_PATH)/data
 
 re: clean all
 

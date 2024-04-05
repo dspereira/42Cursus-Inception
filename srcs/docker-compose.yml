@@ -44,16 +44,16 @@ volumes:
     name: db-data
     driver_opts:
       type: none
-      device: /home/debian/data/mysql
+      device: ${VOLUMES_PATH}/data/mysql
       o: bind
       
   wp-data:
     name: wp-data
     driver_opts:
       type: none
-      device: /home/debian/data/wordpress
+      device: ${VOLUMES_PATH}/data/wordpress
       o: bind
 
 networks:
   inception-network:
-    name: inception
+    name: inception-network
