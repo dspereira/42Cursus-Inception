@@ -23,6 +23,7 @@ touch .env
 ```
 
 ### Build:
+
 ```shell
 make
 ```
@@ -31,6 +32,26 @@ make
 To ensure everything is working correctly, you can test by opening the provided link with your chosen domain. Since you are using OpenSSL, your certificate is self-signed, which may trigger a privacy and security warning in your browser. In this case, you will need to bypass this message and proceed to access the website.
 
 https://example.com
+
+
+## Makefile Commands
+
+### Setting Up and Managing Docker Compose
+
+- `make all`: Creates necessary directories and starts Docker Compose services in detached mode.
+- `make start`: Starts Docker Compose services in detached mode.
+- `make stop`: Stops Docker Compose services.
+- `make clean`: Stops and removes all containers, images, and volumes created by Docker Compose.
+- `make clean-data`: Stops and removes all containers, images, and volumes created by Docker Compose, as well as deletes any associated data directories.
+- `make re`: Performs a clean operation followed by starting Docker Compose services.
+- `make logs`: Displays logs of Docker Compose services.
+- `make info`: Displays information about Docker Compose services, Docker images, networks, and volumes.
+
+### Interacting with Docker Containers
+
+- `make mariadb-it`: Enters an interactive shell session in the MariaDB container.
+- `make nginx-it`: Enters an interactive shell session in the NGINX container.
+- `make wordpress-it`: Enters an interactive shell session in the WordPress container.
 
 
 ## Useful Resources
