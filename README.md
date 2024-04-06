@@ -4,6 +4,7 @@ This project is an integral part of the 42Lisboa curriculum and aims to set up a
 
 For this project, we have created three services, NGINX, MariaDB, and Wordpress each in a separate container managed by Docker Compose. All the containers were built using custom Dockerfiles based on Debian:11.
 
+For more info see the [subject](https://github.com/dspereira/42Cursus-Inception/blob/main/docs/inception_subject.pdf).
 
 ## Infrastructure Architecture
 
@@ -76,6 +77,7 @@ https://example.com
 
 ## Useful Resources
 [Useful commands for Docker](https://github.com/dspereira/42Cursus-Inception/blob/main/docs/useful-commands.md).
+
 
 ## License
 This project is licensed under the [MIT License](https://github.com/dspereira/42Cursus-Inception/blob/main/LICENSE).
