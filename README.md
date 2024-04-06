@@ -13,6 +13,8 @@ For this project, we have created three services, NGINX, MariaDB, and Wordpress 
 
 - **DB**: This container runs a MariaDB database and exposes port 3306 within the Docker internal network to communicate with the WordPress container. Additionally, this container has a volume to store data on the host, ensuring that data persists even after the container is deleted.
 
+- **WordPress+PHP**: This container has WordPress and PHP 7.4 installed. Since WordPress requires a database to function properly, it is configured to communicate with MariaDB via port 3306. Additionally, in order for WordPress to communicate with NGINX, it exposes port 9000 and configures php-fpm (FastCGI Process Manager) to listen on that port.
+
 ## Requirements
 
 This project was developed and tested on Debian Linux.
