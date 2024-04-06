@@ -5,6 +5,9 @@ This project is an integral part of the 42Lisboa curriculum and aims to set up a
 For this project, we have created three services, NGINX, MariaDB, and Wordpress each in a separate container managed by Docker Compose. All the containers were built using custom Dockerfiles based on Debian:11.
 
 
+## Infrastructure Architecture
+
+<img src="https://github.com/dspereira/42Cursus-Inception/blob/main/docs/infrastructure-architecture.png" alt="example" width="600"/>
 
 ## Requirements
 
