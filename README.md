@@ -7,7 +7,11 @@ For this project, we have created three services, NGINX, MariaDB, and Wordpress 
 
 ## Infrastructure Architecture
 
-<img src="https://github.com/dspereira/42Cursus-Inception/blob/main/docs/infrastructure-architecture.png" alt="example" width="600"/>
+<img src="https://github.com/dspereira/42Cursus-Inception/blob/main/docs/infrastructure-architecture.png" alt="example" width="400"/>
+
+### The infrastructure consists of three containers:
+
+- **DB**: This container runs a MariaDB database and exposes port 3306 within the Docker internal network to communicate with the WordPress container. Additionally, this container has a volume to store data on the host, ensuring that data persists even after the container is deleted.
 
 ## Requirements
 
