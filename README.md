@@ -1,5 +1,11 @@
 # 42Cursus-Inception
 
+This project is an integral part of the 42Lisboa curriculum and aims to set up a small infrastructure using Docker and Docker Compose.
+
+For this project, we have created three services, NGINX, MariaDB, and Wordpress each in a separate container managed by Docker Compose. All the containers were built using custom Dockerfiles based on Debian:11.
+
+
+
 ## Requirements
 
 This project was developed and tested on Debian Linux.
