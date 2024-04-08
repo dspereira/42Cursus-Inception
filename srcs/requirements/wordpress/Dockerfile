@@ -12,8 +12,7 @@ RUN apt update && apt install -y \
     php7.4-xmlrpc      \
     php7.4-soap        \
     php7.4-intl        \
-    php7.4-zip         \
-    mariadb-client
+    php7.4-zip
 
 # Install WordPress CLI (WP-CLI) for command-line WordPress management.
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
