@@ -38,7 +38,7 @@ git clone https://github.com/dspereira/42Cursus-Inception.git inception && cd in
 ```
 
 ### Setting Up Environment Variables:
-Before running the project, create a .env file in the root directory and populate it with the required environment variables, following the .env.template as a guide.
+Before running the project, create a .env file in the root directory and populate it with the required environment variables, following the [.env.template](https://github.com/dspereira/42Cursus-Inception/blob/main/srcs/.env.template) as a guide.
 ```shell
 touch srcs/.env
 ```
