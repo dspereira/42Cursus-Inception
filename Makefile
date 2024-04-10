@@ -25,7 +25,7 @@ clean:
 	$(COMPOSE) down --rmi all --volumes
 
 clean-data: clean
-	sudo rm -rf $(VOLUMES_PATH)/data
+	cd $(VOLUMES_PATH) && sudo rm -rf *
 
 re: clean all
 
