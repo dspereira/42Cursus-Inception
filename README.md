@@ -52,9 +52,6 @@ make
 ### Testing the Website
 To ensure everything is working correctly, you can test by opening the provided link with your chosen domain. Since you are using OpenSSL, your certificate is self-signed, which may trigger a privacy and security warning in your browser. In this case, you will need to bypass this message and proceed to access the website.
 
-https://example.com
-
-
 ## Makefile Commands
 
 ### Setting Up and Managing Docker Compose
