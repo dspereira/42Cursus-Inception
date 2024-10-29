@@ -34,7 +34,7 @@ To run this project, you'll need the following tools installed on your system:
 
 ### Clone repo:
 ```shell
-git clone https://github.com/dspereira/42Cursus-Inception.git inception && cd inception
+git clone git@github.com:dspereira/42Cursus-Inception.git inception && cd inception
 ```
 
 ### Setting Up Environment Variables:
