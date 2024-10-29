@@ -6,6 +6,15 @@ For this project, we have created three services, NGINX, MariaDB, and Wordpress 
 
 For more info see the [subject](https://github.com/dspereira/42Cursus-Inception/blob/main/docs/inception_subject.pdf).
 
+## Table of Contents
+- [Infrastructure Architecture](#infrastructure-architecture)
+- [Requirements](#requirements)
+- [Usage](#usage)
+- [Makefile Commands](#makefile-commands)
+- [Useful Resources](#useful-resources)
+- [License](#license)
+- [Contact](#contact)
+
 ## Infrastructure Architecture
 
 <img src="https://github.com/dspereira/42Cursus-Inception/blob/main/docs/infrastructure-architecture.png" alt="example" width="400"/>
@@ -30,7 +39,7 @@ To run this project, you'll need the following tools installed on your system:
 - Docker Engine: [Docker Installation Guide](https://docs.docker.com/engine/install/)
 - make
 
-## Usage
+## Installation / Usage
 
 ### Clone repo:
 ```shell
@@ -43,7 +52,7 @@ Before running the project, create a .env file in the root directory and populat
 touch srcs/.env
 ```
 
-### Installation / Usage:
+### Build:
 
 ```shell
 make
