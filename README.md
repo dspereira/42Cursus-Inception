@@ -43,14 +43,16 @@ Before running the project, create a .env file in the root directory and populat
 touch srcs/.env
 ```
 
-### Build:
+### Installation / Usage:
 
 ```shell
 make
 ```
 
-### Testing the Website
-To ensure everything is working correctly, you can test by opening the provided link with your chosen domain. Since you are using OpenSSL, your certificate is self-signed, which may trigger a privacy and security warning in your browser. In this case, you will need to bypass this message and proceed to access the website.
+### Usage:
+After Docker is running without any issues, you can access your website via HTTPS, for example, at https://localhost. If you are using a domain within your local network, ensure that the /etc/hosts file is configured correctly to access your website.
+
+Since you are using OpenSSL, your certificate is self-signed, which may trigger a privacy and security warning in your browser. In this case, you will need to click on the option to accept and continue or a similar message, depending on the browser being used.
 
 ## Makefile Commands
 
