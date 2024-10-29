@@ -9,7 +9,7 @@ For more info see the [subject](https://github.com/dspereira/42Cursus-Inception/
 ## Table of Contents
 - [Infrastructure Architecture](#infrastructure-architecture)
 - [Requirements](#requirements)
-- [Usage](#usage)
+- [Installation / Usage](#installation--usage)
 - [Makefile Commands](#makefile-commands)
 - [Useful Resources](#useful-resources)
 - [License](#license)
